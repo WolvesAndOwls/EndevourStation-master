@@ -32,9 +32,9 @@ but they don't actually change anything about the load order
 	full_name = "Southern Cross"
 	path = "southern_cross"
 
-	lobby_icon = 'icons/misc/CHOMPSTATION.gif'	//CHOMPStation Edit
-	lobby_screens = list() //CHOMPStation Edit - CHOMPStation image
-	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit - Job icons for off-duty/exploration
+	lobby_icon = 'icons/misc/growl_station_lobby.dmi'
+	lobby_screens = list()
+	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 	holomap_smoosh = list(list(
 		Z_LEVEL_STATION_ONE,
