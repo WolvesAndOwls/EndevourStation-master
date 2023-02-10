@@ -198,7 +198,6 @@
 			"weight_ex" = host.weight_message_visible,
 			"belly_fullscreen" = selected.belly_fullscreen,
 			"belly_fullscreen_color" = selected.belly_fullscreen_color,
-			"colorization_enabled" = selected.colorization_enabled,
 			"vorespawn_blacklist" = selected.vorespawn_blacklist, //CHOMP Addition: vorespawn blacklist
 			"sound_volume" = selected.sound_volume, //CHOMPAdd
 			//CHOMP add: vore sprite options
@@ -267,12 +266,10 @@
 			selected_list["autotransfer"]["autotransfer_max_amount"] = selected.autotransfer_max_amount
 
 		selected_list["disable_hud"] = selected.disable_hud
-		selected_list["colorization_enabled"] = selected.colorization_enabled
 		selected_list["belly_fullscreen_color"] = selected.belly_fullscreen_color
 
-		if(selected.colorization_enabled)
-			selected_list["possible_fullscreens"] = icon_states('modular_chomp/icons/mob/screen_full_vore_ch.dmi') //Makes any icons inside of here selectable. //CHOMPedit
-		else
+		selected_list["possible_fullscreens"] = icon_states('icons/mob/screen_full_vore.dmi') //Makes any icons inside of here selectable. //CHOMPedit
+		/*else //Growl Edit - This is too hacky. I'll simply fix this.
 			selected_list["possible_fullscreens"] = icon_states('icons/mob/screen_full_vore.dmi') //Where all upstream stomachs are stored. I'm not touching the chunks of comments below but they are inaccurate here.
 			//INSERT COLORIZE-ONLY STOMACHS HERE.
 			//This manually removed color-only stomachs from the above list.
@@ -284,6 +281,7 @@
 			selected_list["possible_fullscreens"] -= "a_synth_flesh_mono_hole"
 			selected_list["possible_fullscreens"] -= "a_anim_belly"
 			//INSERT COLORIZE-ONLY STOMACHS HERE
+			*/
 
 		var/list/selected_contents = list()
 		for(var/O in selected)
@@ -1636,10 +1634,6 @@
 			. = TRUE
 		if("b_disable_hud")
 			host.vore_selected.disable_hud = !host.vore_selected.disable_hud
-			. = TRUE
-		if("b_colorization_enabled") //ALLOWS COLORIZATION.
-			host.vore_selected.colorization_enabled = !host.vore_selected.colorization_enabled
-			host.vore_selected.belly_fullscreen = "dark" //This prevents you from selecting a belly that is not meant to be colored and then turning colorization on.
 			. = TRUE
 		/*
 		if("b_multilayered") //Allows for 'multilayered' stomachs. Currently not implemented. Add to TGUI.

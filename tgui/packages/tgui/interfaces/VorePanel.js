@@ -850,7 +850,6 @@ const VoreSelectedBellyVisuals = (props, context) => {
     belly_fullscreen,
     belly_fullscreen_color,
     mapRef,
-    colorization_enabled,
     possible_fullscreens,
     disable_hud,
     vore_sprite_flags,
@@ -996,14 +995,6 @@ const VoreSelectedBellyVisuals = (props, context) => {
             onClick={() => act('set_attribute', { attribute: 'b_fullscreen_color', val: null })}>
             Select Color
           </Button>
-          <LabeledList.Item label="Enable Coloration">
-            <Button
-              onClick={() => act('set_attribute', { attribute: 'b_colorization_enabled' })}
-              icon={colorization_enabled ? 'toggle-on' : 'toggle-off'}
-              selected={colorization_enabled}
-              content={colorization_enabled ? 'Yes' : 'No'}
-            />
-          </LabeledList.Item>
           <LabeledList.Item label="Preview Belly">
             <Button onClick={() => act('set_attribute', { attribute: 'b_preview_belly' })} content={'Preview'} />
           </LabeledList.Item>
