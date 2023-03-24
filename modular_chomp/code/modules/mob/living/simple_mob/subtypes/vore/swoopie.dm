@@ -20,6 +20,7 @@
 	adminbus_trash = TRUE //You know what, sure whatever. It's not like anyone's gonna be taking this bird on unga trips to be their gamer backpack, which kinda was the main reason for the trash eater restrictions in the first place anyway.
 	faction = "neutral"
 	say_list_type = /datum/say_list/swoopie
+	ai_holder_type = /datum/ai_holder/simple_mob/retaliate
 
 /mob/living/simple_mob/vore/aggressive/corrupthound/swoopie/init_vore()
 	if(!voremob_loaded)
