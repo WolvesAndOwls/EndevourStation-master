@@ -146,6 +146,14 @@
 				S.dirt = 0
 				adjust_nutrition(1)
 
+/mob/living/simple_mob/vore/aggressive/corrupthound/swoopie/apply_melee_effects(var/atom/A)
+	if(ismouse(A))
+		var/mob/living/simple_mob/animal/passive/mouse/mouse = A
+		var/obj/belly/B = vore_selected
+		B.nom_mob(A)
+	else
+		..()
+
 /datum/say_list/swoopie
 	speak = list("Scanning for debris...", "Scanning for dirt...", "Scanning for pests...", "Squawk!")
 	emote_hear = list("squawks!", "whirrs idly.", "revs up its vacuum.")
